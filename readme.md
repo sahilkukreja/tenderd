@@ -42,8 +42,8 @@ This project sets up a data pipeline that consumes messages from Kafka, processe
 1. **Clone the repository**:
 
    ```bash
-   git clone <repository_url>
-   cd <repository_directory>
+   git clone https://github.com/sahilkukreja/tenderd.git
+   cd tenderd
    ```
 2. **Create and activate a virtual environment**:
    ```bash
