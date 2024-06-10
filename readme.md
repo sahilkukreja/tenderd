@@ -89,3 +89,18 @@ Defines the services required for the application stack:
 - pgadmin: PgAdmin service for managing PostgreSQL via a web interface.
 -  python_app: The Python application service that includes the producer and consumer scripts.
 -  setup_db.sql: SQL script to set up the initial database schema in PostgreSQL. It is automatically executed when the PostgreSQL container is initialized.
+
+
+To inject anomalous data in the same structure as the original dataset, place the file containing the anomalous data in the "data" folder and execute the following command:
+
+```bash
+    docker-compose run python_app python producer.py $file_name
+
+Replace $file_name with the name of the file containing the anomalous data.
+After running the command, monitor the logs to flag any issues. The script will generate a summary report in the following format:
+
+INFO: DataPipelineLogger: Data Pipeline Summary Report (2024-06-10T17:18:03.888316)
+Total Messages Processed: 97550
+Invalid Format: 0
+Missing Values: 0
+Outliers: 0
